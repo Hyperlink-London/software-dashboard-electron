@@ -1,5 +1,5 @@
 {
-  "name": "electron-react-test",
+  "name": "hyperlink-dashboard-electron",
   "version": "1.0.0",
   "main": "electron/main.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "electron-builder"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hyperlink London",
   "license": "ISC",
   "description": "",
   "devDependencies": {
@@ -19,8 +19,8 @@
     "electron-builder": "^25.1.8"
   },
   "build": {
-    "appId": "com.yourapp.id",
-    "productName": "Your App Name",
+    "appId": "com.hyperlinklondon.dashboard",
+    "productName": "Hyperlink Dashboard",
     "files": [
       "dist/**/*",
       "node_modules/**/*",
@@ -35,6 +35,13 @@
     },
     "linux": {
       "target": "AppImage"
-    }
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Hyperlink London",
+        "repo": "software-dashboard-electron"
+      }
+    ]
   }
 }
