@@ -5,7 +5,7 @@
   "scripts": {
     "start": "concurrently \"npm run react\" \"npm run electron\"",
     "electron": "electron .",
-    "react": "cd react-ui && npm run dev"
+    "react": "cd frontend && npm run dev"
   },
   "keywords": [],
   "author": "",
