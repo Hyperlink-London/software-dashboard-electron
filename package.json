@@ -5,7 +5,8 @@
   "scripts": {
     "start": "concurrently \"npm run react\" \"npm run electron\"",
     "electron": "electron .",
-    "react": "cd frontend && npm run dev"
+    "react": "cd frontend && npm run build",
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,26 @@
   "description": "",
   "devDependencies": {
     "concurrently": "^9.1.2",
-    "electron": "^34.3.0"
+    "electron": "^34.3.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.yourapp.id",
+    "productName": "Your App Name",
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "electron/main.js",
+      "frontend/dist/**/*"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
   }
 }

@@ -1,7 +1,7 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, session } = require("electron");
 const path = require("path");
-const isDev = !app.isPackaged;
 
+const isDev = !app.isPackaged;
 let win;
 
 function createWindow() {
@@ -10,20 +10,31 @@ function createWindow() {
     height: 1000,
     resizable: false,
     webPreferences: {
-      nodeIntegration: true,
-    },
+      nodeIntegration: false, // Improve security (disable unless required)
+      contextIsolation: true, // Prevent global access
+      webSecurity: false    },
   });
 
   if (isDev) {
     setTimeout(() => {
-      win.loadURL("http://localhost:5173");  // Wait for React to start
-    }, 500);  // Delay of 2 seconds (adjust if necessary)
+      win.loadURL("http://localhost:5173"); // Wait for Vite server
+    }, 500);
   } else {
-    win.loadURL(`file://${path.join(__dirname, "../build/index.html")}`);
+    win.loadFile(path.join(__dirname, "../frontend/dist/index.html"));
   }
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+    const headers = { ...details.responseHeaders };
+    if (details.url.endsWith(".js") || details.url.endsWith(".jsx")) {
+      headers["Content-Type"] = ["application/javascript"];
+    }
+    callback({ responseHeaders: headers });
+  });
+
+  createWindow();
+});
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
