@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import TopBar from './components/TopBar';
-import './App.css'
+import MainDash from './components/mainDash';
+import PodProgress from "./components/podProgress";
+
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-  
-
   return (
-    <TopBar />
-
-  )
+      <div>
+        <TopBar />
+        <MainDash />
+        <PodProgress />
+      </div>
+  );
 }
 
 export default App
