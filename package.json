@@ -1,0 +1,18 @@
+{
+  "name": "electron-react-test",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "concurrently \"npm run react\" \"npm run electron\"",
+    "electron": "electron .",
+    "react": "cd react-ui && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^34.3.0"
+  }
+}
