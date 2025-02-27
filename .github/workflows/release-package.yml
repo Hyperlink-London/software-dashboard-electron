@@ -44,4 +44,4 @@ jobs:
           key: ${{ runner.os }}-build-${{ github.sha }}
       - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
