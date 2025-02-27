@@ -5,7 +5,8 @@
   "scripts": {
     "start": "concurrently \"npm run react\" \"npm run electron\"",
     "electron": "electron .",
-    "react": "cd frontend && npm run build",
+    "react": "cd frontend && npm run dev",
+    "prebuild": "node -e \"const { execSync } = require('child_process'); if (process.platform === 'win32') { execSync('rd /s /q dist && rd /s /q frontend\\dist', { stdio: 'inherit' }); } else { execSync('rm -rf dist frontend/dist', { stdio: 'inherit' }); }\" && cd frontend && npm run build",
     "build": "electron-builder"
   },
   "keywords": [],

@@ -24,7 +24,7 @@ const FSMProgress = ({steps, step}) => {
                         ></div>
                     )}
 
-                    {/* Text */}
+
                     {/*<span className={`ml-2 ${index + 1 <= step ? 'text-blue-500' : 'text-gray-400'}`}>*/}
                     {/*    {item}*/}
                     {/*</span>*/}

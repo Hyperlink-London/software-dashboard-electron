@@ -7,7 +7,7 @@ function Speedometer() {
             <ReactSpeedometer
                 minValue={0}
                 maxValue={100}
-                value={65}
+                value={70}
                 segments={10}  // Adding segments for better visual granularity
                 needleColor="white"
                 startColor="#000000"  // Starting color of the speedometer
