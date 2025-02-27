@@ -1,29 +1,25 @@
-import React, { useEffect, useRef } from 'react';
-import Plotly from 'plotly.js-dist';
+import React from 'react';
+import ReactSpeedometer from "react-d3-speedometer";
 
 function Speedometer() {
-    const plotRef = useRef(null); // Reference to the div for Plotly
-
-    useEffect(() => {
-        const data = [
-            {
-                domain: { x: [0, 1], y: [0, 1] },
-                value: 450,
-                title: { text: "Speed" },
-                type: "indicator",
-                mode: "gauge+number",
-                delta: { reference: 400 },
-                gauge: { axis: { range: [null, 500] } }
-            }
-        ];
-
-        const layout = { width: 500, height: 400 };
-        Plotly.newPlot(plotRef.current, data, layout); // Use the reference here
-    }, []);
-
     return (
-        <div className="bg-gray-800 rounded-lg shadow p-4 h-full flex-grow">
-            <div ref={plotRef} id="myDiv" /> {/* This is where Plotly will render the chart */}
+        <div className="rounded-lg shadow-lg p-6 h-full flex-grow">
+            <ReactSpeedometer
+                minValue={0}
+                maxValue={100}
+                value={65}
+                segments={10}  // Adding segments for better visual granularity
+                needleColor="white"
+                startColor="#000000"  // Starting color of the speedometer
+                endColor="#000000"    // Ending color of the speedometer
+                width={400}           // Custom width
+                height={300}          // Custom height
+                ringWidth={20}        // Customize the thickness of the ring
+                needleTransitionDuration={4000}  // Animation duration for the needle
+                needleTransition="easeElastic"  // Needle transition style
+                textColor="#FFFFFF"  // Text color for the labels and values
+                fontSize={24}         // Adjust the font size for better visibility
+            />
         </div>
     );
 }
