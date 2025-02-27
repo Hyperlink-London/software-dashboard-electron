@@ -14,13 +14,13 @@ jobs:
           node-version: 22
       - run: npm ci
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run prebuild
       - run: npm run build
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}# Use GITHUB_TOKEN
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}# Use GITHUB_TOKEN
       - name: Cache build artifacts
         uses: actions/cache@v3
         with:
@@ -50,5 +50,5 @@ jobs:
           key: ${{ runner.os }}-build-${{ github.sha }}
       - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}# Use GITHUB_TOKEN
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}# Use GITHUB_TOKEN
