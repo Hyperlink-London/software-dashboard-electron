@@ -17,7 +17,7 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: cd frontend && npm ci
-      - run: npm prebuild
+      - run: cd .. && npm prebuild
       - run: npm build
 
   publish-gpr:
@@ -34,7 +34,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: cd frontend && npm ci
-      - run: npm prebuild
+      - run: cd .. && npm prebuild
       - run: npm build
         env:
           NODE_AUTH_TOKEN: ${{secrets.CICD_test}}
