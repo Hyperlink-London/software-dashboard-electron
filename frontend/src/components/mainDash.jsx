@@ -1,7 +1,7 @@
 import React from 'react';
 import FSMProgress from "@/components/fsmProgess.jsx";
-import Speedometer from "./speedometer.jsx";
-import Telemetry from "./telemetry.jsx";
+import Speedometer from "@/components/speedometer.jsx";
+import Telemetry from "@/components/telemetry.jsx";
 
 function MainDash() {
 

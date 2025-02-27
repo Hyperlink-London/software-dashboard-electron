@@ -1,8 +1,8 @@
 import {useState} from 'react'
-import TopBar from './components/TopBar';
-import MainDash from './components/mainDash';
-import PodProgress from "./components/podProgress";
-import PastRun from "./components/pastRun.jsx";
+import TopBar from '@/components/TopBar';
+import MainDash from '@/components/mainDash';
+import PodProgress from "@/components/podProgress";
+import PastRun from "@/components/pastRun.jsx";
 
 
 import './App.css';

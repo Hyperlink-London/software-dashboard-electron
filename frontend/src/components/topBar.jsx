@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import logo from '../assets/hyperlink_logo.png';
+import logo from '@/assets/hyperlink_logo.png';
 
 function TopBar({activeTab, onTabChange}) { //added props
     return (
