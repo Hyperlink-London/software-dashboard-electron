@@ -39,7 +39,7 @@
     "publish": [
       {
         "provider": "github",
-        "owner": "Hyperlink London",
+        "owner": "Hyperlink-London",
         "repo": "software-dashboard-electron"
       }
     ]
