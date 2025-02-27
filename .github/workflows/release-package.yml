@@ -35,4 +35,4 @@ jobs:
       - run: npm run prebuild
       - run: npm run build
         env:
-          NODE_AUTH_TOKEN: ${{secrets.CICD_test}}
+          NODE_AUTH_TOKEN: ${{secrets.GH_TOKEN}}
