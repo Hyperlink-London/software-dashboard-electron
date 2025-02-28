@@ -1,5 +1,5 @@
 {
-  "name": "softare-dashboard-electron",
+  "name": "@Hyperlink-London/software-dashboard-electron",
   "version": "0.0.1",
   "main": "electron/main.js",
   "scripts": {
