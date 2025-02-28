@@ -51,7 +51,7 @@ jobs:
             node_modules
             dist
           key: ${{ runner.os }}-build-${{ github.sha }}
-      - run: npm publish --access public
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
