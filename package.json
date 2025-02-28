@@ -1,5 +1,5 @@
 {
-  "name": "hyperlink-dashboard-electron",
+  "name": "softare-dashboard-electron",
   "version": "0.0.1",
   "main": "electron/main.js",
   "scripts": {
@@ -41,12 +41,12 @@
     "linux": {
       "target": "AppImage"
     },
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "Hyperlink-London",
-        "repo": "software-dashboard-electron"
-      }
-    ]
+  "publish": [
+    {
+      "provider": "github",
+      "owner": "Hyperlink-London",
+      "repo": "software-dashboard-electron"
+    }
+  ]
   }
 }
