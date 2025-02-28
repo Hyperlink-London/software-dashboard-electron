@@ -42,6 +42,7 @@ jobs:
         with:
           node-version: 22
           registry-url: https://npm.pkg.github.com/
+          scope: "@Hyperlink-London"
       - name: Set up npm authentication
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
       - name: Restore build artifacts
