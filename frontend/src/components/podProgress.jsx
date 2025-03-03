@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PodProgressLogo from '@/assets/pod.svg';
+import usePodMovement from '@/hooks/usePodMovement';
 
 function PodProgress() {
-    // State to track progress (0 to 1)
-    const [progress, setProgress] = useState(0);
-
+    const progress = usePodMovement();
+    
     // Calculate the position based on the progress (0 - 1)
     const position = `${progress * 100}%`;
 
@@ -18,10 +18,10 @@ function PodProgress() {
                     <img
                         src={PodProgressLogo}
                         alt="Pod Progress"
-                        className="absolute -mt-7"
+                        className="px-4 absolute -mt-7"
                         style={{
                             left: position,
-                            transition: 'left 0.3s ease', // Add smooth transition for movement
+                            transform: 'translateX(-50%)', // Center the pod horizontally
                             visibility: 'visible', // Ensure visibility
                         }}
                     />

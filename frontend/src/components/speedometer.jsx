@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactSpeedometer from "react-d3-speedometer";
-import { useSpeedometerAnimation } from '@/hooks/speedometer_demo.js';
+import { useSpeedometerAnimation } from '@/hooks/useSpeedometer.js';
 import LineGraph from '@/components/graphs.jsx';
 
 const Speedometer = () => {

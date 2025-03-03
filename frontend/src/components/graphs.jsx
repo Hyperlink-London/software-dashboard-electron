@@ -45,6 +45,7 @@ const LineGraph = () => {
             },
             title: {
                 display: true,
+            
                 text: 'Random Data Line Graph',
                 color: 'white',
             }
