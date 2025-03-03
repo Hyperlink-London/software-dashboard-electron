@@ -5,7 +5,6 @@ function APITest() {
     const [apiResult, setApiResult] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-
     const callExampleApi = async () => {
         setLoading(true);
         setError(null); // Reset error before new request

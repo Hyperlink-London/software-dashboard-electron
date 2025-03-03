@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Hyperlink-London/software-dashboard-electron.git"
+    "url": "git+https://github.com/Hyperlink-London/software-dashboard-electron.git"
   },
   "keywords": [],
   "author": "Hyperlink London",
@@ -22,7 +22,9 @@
     "electron": "^34.3.0",
     "electron-builder": "^25.1.8"
   },
-  "publishConfig":{"registry":"https://npm.pkg.github.com/"},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "build": {
     "appId": "com.hyperlinklondon.dashboard",
     "productName": "Hyperlink Dashboard",
@@ -41,12 +43,12 @@
     "linux": {
       "target": "AppImage"
     },
-  "publish": [
-    {
-      "provider": "github",
-      "owner": "Hyperlink-London",
-      "repo": "software-dashboard-electron"
-    }
-  ]
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Hyperlink-London",
+        "repo": "software-dashboard-electron"
+      }
+    ]
   }
 }
