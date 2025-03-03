@@ -13,10 +13,10 @@ function MainDash() {
             </div>
 
             <div className="flex flex-grow h-full">
-                <div className="w-1/2 p-1 flex flex-col border border-red-500 h-full">
+                <div className={`w-1/2 p-1 flex flex-col h-full ${process.env.NODE_ENV === 'development' ? 'border border-red-500' : ''}`}>
                     <Speedometer/>
                 </div>
-                <div className="w-1/2 p-1 flex flex-col border border-red-500 h-full">
+                <div className={`w-1/2 p-1 flex flex-col h-full ${process.env.NODE_ENV === 'development' ? 'border border-red-500' : ''}`}>
                     <Telemetry/>
                 </div>
             </div>

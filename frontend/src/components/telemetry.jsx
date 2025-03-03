@@ -72,7 +72,7 @@ function Telemetry() {
                     <button className="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded text-sm mr-4">
                         Abort
                     </button>
-                    <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1.5 rounded text-sm mr-4">
+                    <button className="bg-purple-500 hover:bg-purple-600 text-white px-3 py-1.5 rounded text-sm mr-4">
                         Safety Checks
                     </button>
                     <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded text-sm">
