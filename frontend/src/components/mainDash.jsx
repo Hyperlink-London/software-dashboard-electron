@@ -13,7 +13,7 @@ function MainDash() {
             </div>
 
             <div className="flex flex-grow h-full">
-                <div className="w-1/2 p-1 flex flex-grow border border-red-500">
+                <div className="w-1/2 p-1 flex flex-col border border-red-500">
                     <Speedometer/>
                 </div>
                 <div className="w-1/2 p-1 flex flex-col border border-red-500">

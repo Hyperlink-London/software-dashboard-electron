@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactSpeedometer from "react-d3-speedometer";
 import { useSpeedometerAnimation } from '@/hooks/speedometer_demo.js';
+import LineGraph from '@/components/graphs.jsx';
 
 const Speedometer = () => {
     const speed = useSpeedometerAnimation();
 
     return (
-        <div className="rounded-lg shadow-lg p-6 h-full flex-grow flex flex-col items-center">
+        <div className="rounded-lg shadow-lg p-6 flex flex-col items-center">
             {/* Speed text on top */}
             <div className="text-white text-2xl mb-5">
                 Speed: {speed} mph
             </div>
             
             {/* Speedometer */}
-            <div>
+            <div className="mb-6">
                 <ReactSpeedometer
                     minValue={0}
                     maxValue={100}
@@ -36,11 +37,11 @@ const Speedometer = () => {
             <div className="flex flex-row gap-4 w-full h-full justify-center">
                 <div className="w-1/2 bg-gray-800 rounded-lg p-4 h-full">
                     {/* First graph */}
-                    <p className="text-white">Graph 1</p>
+                    <LineGraph />
                 </div>
                 <div className="w-1/2 bg-gray-800 rounded-lg p-4 h-full">
                     {/* Second graph */}
-                    <p className="text-white">Graph 2</p>
+                    <LineGraph />
                 </div>
             </div>
         </div>

@@ -10,19 +10,22 @@ function PodProgress() {
 
     return (
         <div className="bg-[#7d7d7d] items-start py-2 pt-10">
-            {/* Thin line with margins on both sides */}
-            <div className="border-b-2 border-[#ffffff] w-full mx-4 relative bg-white">
-                {/* Pod SVG with dynamic position */}
-                <img
-                    src={PodProgressLogo}
-                    alt="Pod Progress"
-                    className="absolute -mt-7"
-                    style={{
-                        left: position,
-                        transition: 'left 0.3s ease', // Add smooth transition for movement
-                        visibility: 'visible', // Ensure visibility
-                    }}
-                />
+            {/* Container with padding instead of margin */}
+            <div className="px-4">
+                {/* Progress line contained within padded container */}
+                <div className="border-b-2 border-[#ffffff] w-full relative bg-white">
+                    {/* Pod SVG with dynamic position */}
+                    <img
+                        src={PodProgressLogo}
+                        alt="Pod Progress"
+                        className="absolute -mt-7"
+                        style={{
+                            left: position,
+                            transition: 'left 0.3s ease', // Add smooth transition for movement
+                            visibility: 'visible', // Ensure visibility
+                        }}
+                    />
+                </div>
             </div>
         </div>
     );
