@@ -24,7 +24,7 @@ const Speedometer = () => {
                     startColor="#000000"  // Starting color of the speedometer
                     endColor="#000000"    // Ending color of the speedometer
                     width = {300}        // Custom width
-                    height={300}          // Custom height
+                    height={200}          // Custom height
                     ringWidth={20}        // Customize the thickness of the ring
                     paddingVertical={0}
                     needleTransitionDuration={4000}  // Animation duration for the needle
