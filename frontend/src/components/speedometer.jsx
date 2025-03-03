@@ -8,12 +8,12 @@ const Speedometer = () => {
     return (
         <div className="rounded-lg shadow-lg p-6 h-full flex-grow flex flex-col items-center">
             {/* Speed text on top */}
-            <div className="text-white text-2xl mb-4">
+            <div className="text-white text-2xl mb-5">
                 Speed: {speed} mph
             </div>
             
             {/* Speedometer */}
-            <div className="mb-6">
+            <div>
                 <ReactSpeedometer
                     minValue={0}
                     maxValue={100}
@@ -22,7 +22,7 @@ const Speedometer = () => {
                     needleColor="white"
                     startColor="#000000"  // Starting color of the speedometer
                     endColor="#000000"    // Ending color of the speedometer
-                    width={400}           // Custom width
+                    width={300}           // Custom width
                     height={300}          // Custom height
                     ringWidth={20}        // Customize the thickness of the ring
                     needleTransitionDuration={4000}  // Animation duration for the needle
@@ -33,12 +33,12 @@ const Speedometer = () => {
             </div>
 
             {/* Two graphs container */}
-            <div className="flex flex-row gap-4 w-full justify-center">
-                <div className="w-1/2 bg-gray-800 rounded-lg p-4">
+            <div className="flex flex-row gap-4 w-full h-full justify-center">
+                <div className="w-1/2 bg-gray-800 rounded-lg p-4 h-full">
                     {/* First graph */}
                     <p className="text-white">Graph 1</p>
                 </div>
-                <div className="w-1/2 bg-gray-800 rounded-lg p-4">
+                <div className="w-1/2 bg-gray-800 rounded-lg p-4 h-full">
                     {/* Second graph */}
                     <p className="text-white">Graph 2</p>
                 </div>
