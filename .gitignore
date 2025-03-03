@@ -74,3 +74,4 @@ dist/
 /.idea/software-dashboard-electron.iml
 /.idea/vcs.xml
 /.idea/workspace.xml
+/qodana.sarif.json

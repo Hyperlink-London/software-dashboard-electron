@@ -1,28 +1,31 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PodProgressLogo from '@/assets/pod.svg';
+import usePodMovement from '@/hooks/usePodMovement';
 
 function PodProgress() {
-    // State to track progress (0 to 1)
-    const [progress, setProgress] = useState(0);
-
+    const progress = usePodMovement();
+    
     // Calculate the position based on the progress (0 - 1)
     const position = `${progress * 100}%`;
 
     return (
         <div className="bg-[#7d7d7d] items-start py-2 pt-10">
-            {/* Thin line with margins on both sides */}
-            <div className="border-b-2 border-[#ffffff] w-full mx-4 relative bg-white">
-                {/* Pod SVG with dynamic position */}
-                <img
-                    src={PodProgressLogo}
-                    alt="Pod Progress"
-                    className="absolute -mt-7"
-                    style={{
-                        left: position,
-                        transition: 'left 0.3s ease', // Add smooth transition for movement
-                        visibility: 'visible', // Ensure visibility
-                    }}
-                />
+            {/* Container with padding instead of margin */}
+            <div className="px-4">
+                {/* Progress line contained within padded container */}
+                <div className="border-b-2 border-[#ffffff] w-full relative bg-white">
+                    {/* Pod SVG with dynamic position */}
+                    <img
+                        src={PodProgressLogo}
+                        alt="Pod Progress"
+                        className="px-4 absolute -mt-7"
+                        style={{
+                            left: position,
+                            transform: 'translateX(-50%)', // Center the pod horizontally
+                            visibility: 'visible', // Ensure visibility
+                        }}
+                    />
+                </div>
             </div>
         </div>
     );
