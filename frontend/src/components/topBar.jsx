@@ -37,6 +37,17 @@ function TopBar({activeTab, onTabChange}) { //added props
                             >
                                 Past Runs
                             </a>
+                            <a
+                                href="#"
+                                onClick={() => onTabChange('Debug')} //changed handleTabClick
+                                className={`px-2 py-1 rounded-md text-sm font-medium ${
+                                    activeTab === 'Debug'
+                                        ? 'bg-gray-700 text-white'
+                                        : 'text-gray-400 hover:bg-gray-800 hover:text-gray-300'
+                                }`}
+                            >
+                                Debug
+                            </a>
                         </div>
                     </div>
                     {process.env.NODE_ENV === 'development' && (
