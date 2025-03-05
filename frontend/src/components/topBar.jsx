@@ -5,7 +5,7 @@ import logo from '@/assets/hyperlink_logo.png';
 function TopBar({activeTab, onTabChange}) { //added props
     return (
         <nav className="bg-gray-900 py-2 sticky top-0 z-50">
-            <div className="max-w-7xl mx-auto">
+            <div className="mx-3">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
                         <div className="flex items-center mr-8">
