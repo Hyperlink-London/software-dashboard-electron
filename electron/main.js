@@ -8,7 +8,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1400,
     height: 1000,
-    resizable: false,
+    resizable: true,
     webPreferences: {
       nodeIntegration: false, // Improve security (disable unless required)
       contextIsolation: true, // Prevent global access
