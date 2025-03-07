@@ -1,29 +1,14 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import useApi from '@/hooks/useApi';
 
 function APITest() {
-    const [apiResult, setApiResult] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const callExampleApi = async () => {
-        setLoading(true);
-        setError(null); // Reset error before new request
-        try {
-            const response = await axios.get('http://0.0.0.0:8000/random_data');
-            console.log(response);
-            setApiResult(response.data);
-        } catch (err) {
-            setError(err.message || 'An error occurred');
-        } finally {
-            setLoading(false);
-        }
-    };
+    const { data: apiResult, loading, error, callApi } = useApi('http://0.0.0.0:8000/random_data');
 
     return (
         <div className="flex flex-col items-center justify-center">
             <button
                 className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
-                onClick={callExampleApi}
+                onClick={callApi}
                 disabled={loading}
             >
                 {loading ? 'Loading...' : 'Call Example API'}
