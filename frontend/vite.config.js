@@ -12,6 +12,11 @@ export default defineConfig({
     },
     extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx"], // Resolves these extensions
   },
+  define: {
+    'process.env': {
+      BACKEND_API_URL: JSON.stringify(process.env.BACKEND_API_URL),
+    },
+  },
   build: {
     outDir: "dist", // Use "dist" for output, compatible with Electron
     target: "esnext", // For modern JavaScript output

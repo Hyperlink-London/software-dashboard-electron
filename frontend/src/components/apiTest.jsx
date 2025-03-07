@@ -1,8 +1,9 @@
 import React from 'react';
 import useApi from '@/hooks/useApi';
+import { getBrakingData } from '@/api';
 
 function APITest() {
-    const { data: apiResult, loading, error, callApi } = useApi('http://0.0.0.0:8000/random_data');
+    const { data: apiResult, loading, error, callApi } = useApi(getBrakingData);
 
     return (
         <div className="flex flex-col items-center justify-center">
