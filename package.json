@@ -50,5 +50,10 @@
         "repo": "software-dashboard-electron"
       }
     ]
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron"
+    ]
   }
 }
