@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -22,20 +22,14 @@ ChartJS.register(
     Legend
 );
 
-const LineGraph = () => {
-    // Add state for the random data
-    const [randomData, setRandomData] = useState([]);
-
-    // Generate data only once when component mounts
-    useEffect(() => {
-        const newData = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-        setRandomData(newData);
-    }, []); // Empty dependency array means this runs once on mount
-
+const LineGraph = ({ podData }) => {
     // Chart options
     const options = {
         responsive: true,
         maintainAspectRatio: false,
+        animation: {
+            duration: 0 // Disable animation
+        },
         plugins: {
             legend: {
                 position: 'top',
@@ -45,8 +39,7 @@ const LineGraph = () => {
             },
             title: {
                 display: true,
-            
-                text: 'Random Data Line Graph',
+                text: `Pod Demo Values Over Time (${podData.length} data points)`,
                 color: 'white',
             }
         },
@@ -64,28 +57,60 @@ const LineGraph = () => {
                     color: 'rgba(255, 255, 255, 0.1)'
                 },
                 ticks: {
-                    color: 'white'
-                }
+                    color: 'white',
+                    maxRotation: 45,
+                    minRotation: 45
+                },
+                display: true
+            }
+        },
+        elements: {
+            point: {
+                radius: 2,
+                hoverRadius: 4,
+                hitRadius: 4
+            },
+            line: {
+                tension: 0.4
             }
         }
     };
 
+    // Process the pod data
+    const validData = podData
+        .filter(item => item.demo !== null && item.time !== null)
+        .sort((a, b) => new Date(a.time) - new Date(b.time));
+    const labels = validData.map(item => new Date(item.time).toLocaleTimeString());
+    const demoValues = validData.map(item => item.demo);
+
+    // Validate data
+    console.log('Data points:', {
+        total: podData.length,
+        valid: validData.length,
+        labels: labels.length,
+        values: demoValues.length
+    });
+
     // Chart data
     const data = {
-        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+        labels: labels,
         datasets: [
             {
-                label: 'Random Values',
-                data: randomData,
+                label: 'Demo Values',
+                data: demoValues,
                 borderColor: 'rgb(75, 192, 192)',
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                tension: 0.4
+                tension: 0.4,
+                pointRadius: 2,
+                pointHoverRadius: 4,
+                spanGaps: false
             }
         ]
     };
 
     return (
         <div className="h-full w-full">
+            <div className="text-white mb-2">Total data points: {podData.length}</div>
             <Line options={options} data={data} />
         </div>
     );

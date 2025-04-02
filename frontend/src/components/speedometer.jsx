@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactSpeedometer from "react-d3-speedometer";
 import { useSpeedometerAnimation } from '@/hooks/useSpeedometer.js';
-import LineGraph from '@/components/graphs.jsx';
+import DemoLineGraph from './demoDashGraph';
 
 const Speedometer = () => {
     const speed = useSpeedometerAnimation();
@@ -66,10 +66,10 @@ const Speedometer = () => {
             {/* Two graphs container */}
             <div className="flex flex-row gap-4 w-full h-full justify-center">
                 <div className="w-1/2 bg-gray-700 rounded-lg p-4 h-full">
-                    <LineGraph />
+                    <DemoLineGraph />
                 </div>
                 <div className="w-1/2 bg-gray-700 rounded-lg p-4 h-full">
-                    <LineGraph />
+                    <DemoLineGraph />
                 </div>
             </div>
         </div>
