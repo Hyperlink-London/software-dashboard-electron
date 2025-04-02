@@ -23,6 +23,7 @@ ChartJS.register(
 );
 
 const LineGraph = ({ podData }) => {
+    const validDataPoints = podData.filter(item => item.demo !== null && item.time !== null).length;
     // Chart options
     const options = {
         responsive: true,
@@ -39,7 +40,7 @@ const LineGraph = ({ podData }) => {
             },
             title: {
                 display: true,
-                text: `Pod Demo Values Over Time (${podData.length} data points)`,
+                text: `Pod Demo Values Over Time (${validDataPoints} data points)`,
                 color: 'white',
             }
         },
@@ -110,7 +111,7 @@ const LineGraph = ({ podData }) => {
 
     return (
         <div className="h-full w-full">
-            <div className="text-white mb-2">Total data points: {podData.length}</div>
+            <div className="text-white mb-2">Total data points: {podData.length} (Valid: {validDataPoints})</div>
             <Line options={options} data={data} />
         </div>
     );

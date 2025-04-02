@@ -11,6 +11,6 @@ export const getSpeed = async () => {
 };
 
 export const getPodData = async () => {
-    const response = await apiClient.get('v1/pod_data/read_pod_data?n=100');
+    const response = await apiClient.get('v1/pod_data/read_pod_data?n=300');
     return response.data;
 };

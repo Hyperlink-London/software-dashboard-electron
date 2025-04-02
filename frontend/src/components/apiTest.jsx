@@ -30,7 +30,7 @@ function APITest() {
             // Set up interval for subsequent calls
             intervalId = setInterval(() => {
                 callApi(getPodData);
-            }, 500);
+            }, 100);
         }
 
         // Cleanup function to clear interval when component unmounts or auto-refresh is stopped
@@ -49,21 +49,21 @@ function APITest() {
                     onClick={() => callApi(getBrakingData)}
                     disabled={loading || isAutoRefreshing}
                 >
-                    {loading ? 'Loading...' : 'Call Braking Data API'}
+                    Call Braking Data API
                 </button>
                 <button
                     className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
                     onClick={() => callApi(getSpeed)}
                     disabled={loading || isAutoRefreshing}
                 >
-                    {loading ? 'Loading...' : 'Call Speed API'}
+                    Call Speed API
                 </button>
                 <button
                     className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
                     onClick={() => callApi(getPodData)}
                     disabled={loading || isAutoRefreshing}
                 >
-                    {loading ? 'Loading...' : 'Call Pod Data API'}
+                    Call Pod Data API
                 </button>
                 <button
                     className={`font-bold py-2 px-4 rounded ${
