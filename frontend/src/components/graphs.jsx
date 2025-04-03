@@ -78,6 +78,7 @@ const LineGraph = ({ podData }) => {
     };
 
     // Process the pod data
+    //Todo: Change to Sliding Window?
     const validData = podData
         .filter(item => item.demo !== null && item.time !== null)
         .sort((a, b) => new Date(a.time) - new Date(b.time));
