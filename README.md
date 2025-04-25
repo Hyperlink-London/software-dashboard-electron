@@ -4,6 +4,9 @@ A modern desktop application built with Electron and React, providing a sleek da
 
 ![Screenshot 2025-03-03 at 13 04 20](https://github.com/user-attachments/assets/23210543-2386-40bb-9b0c-86d66a71c70b)
 
+![liveupdatinggraph](https://github.com/user-attachments/assets/fac031c0-8d04-47bc-84cc-3abb1bd9bc84)
+
+
 ## Features
 
 - Cross-platform support (Windows, macOS, Linux)
